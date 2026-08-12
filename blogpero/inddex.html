@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lendas do Futebol</title>
+  
+  <style>
+    /* 1. CONFIGURAÇÕES GERAIS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    /* 2. O FUNDO DO CAMPO DE FUTEBOL */
+    body {
+      background-color: #1b5e20; 
+      background-image: linear-gradient(#1b5e20 50%, #237229 50%);
+      background-size: 100% 140px; 
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* 3. TOPO DO SITE */
+    header {
+      background-color: rgba(11, 41, 13, 0.9); 
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid #4ade80; 
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .destaque-verde {
+      color: #4ade80; /* Letras Verde Claro */
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      color: #a3e635; 
+    }
+
+    /* 4. BANNER PRINCIPAL */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem;
+      background-color: rgba(0, 0, 0, 0.5); 
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #4ade80; 
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    /* 5. SEÇÕES E GRIDS */
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .titulo-secao {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2.5rem;
+      color: #a3e635; /* Letras Verde Claro Limão */
+      text-transform: uppercase;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    /* CARDS DOS JOGADORES */
+    .card {
+      background-color: #ffffff;
+      color: #1a1a1a; 
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    .card-badge {
+      background-color: #1b5e20;
+      color: #4ade80;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-block;
+      border-bottom-right-radius: 8px;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content h3 {
+      font-size: 1.5rem;
+      color: #1b5e20;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-content .pais {
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    /* 6. SEÇÃO DE DEPOIMENTOS */
+    .depoimentos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .balao-citacao {
+      background-color: rgba(11, 41, 13, 0.9);
+      border-left: 5px solid #a3e635;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .balao-citacao p {
+      font-style: italic;
+      color: #e2e8f0;
+      margin-bottom: 1rem;
+    }
+
+    .autor-citacao {
+      font-weight: bold;
+      color: #4ade80; 
+      text-align: right;
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    /* 7. SEÇÃO HISTÓRICA (REGRAS E ORIGEM) */
+    .bloco-historia {
+      background-color: rgba(11, 41, 13, 0.95);
+      border: 2px solid #4ade80;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .bloco-historia h3 {
+      color: #4ade80;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+      border-bottom: 1px solid #237229;
+      padding-bottom: 0.5rem;
+    }
+
+    .bloco-historia h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .bloco-historia p {
+      color: #e2e8f0;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .lista-regras {
+      list-style-type: square;
+      margin-left: 2rem;
+      color: #a3e635;
+      font-size: 1.05rem;
+    }
+
+    .lista-regras li {
+      margin-bottom: 0.8rem;
+    }
+
+    .lista-regras span {
+      color: #ffffff;
+    }
+
+    /* 8. RODAPÉ */
+    footer {
+      background-color: #0b290d;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Lendas do <span class="destaque-verde">Futebol</span></div>
+    <nav>
+      <ul>
+        <li><a href="#lendas">As Lendas</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#historia-regras">Origem e Regras</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Mitos da Bola</h1>
+    <p>A magia do futebol arte e o respeito eterno entre os maiores gigantes da história.</p>
+  </section>
+
+  <!-- GALERIA DE JOGADORES -->
+  <main class="container" id="lendas">
+    <h2 class="titulo-secao" style="margin-top: 1rem;">Galeria dos Imortais</h2>
+    
+    <div class="cards-grid">
+      <article class="card">
+        <div class="card-badge">O Rei</div>
+        <div class="card-content">
+          <h3>Pelé</h3>
+          <p class="pais">Brasil 🇧🇷</p>
+          <p>Único jogador a vencer 3 Copas do Mundo. Transformou o futebol em arte global.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-badge">O Bruxo</div>
+        <div class="card-content">
+          <h3>Ronaldinho Gaúcho</h3>
+          <p class="pais">Brasil 🇧🇷</p>
+          <p>O homem que resgatou o sorriso no esporte. Campeão do mundo e mestre dos dribles impossíveis.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-badge">O Menino Rei</div>
+        <div class="card-content">
+          <h3>Neymar Jr</h3>
+          <p class="pais">Brasil 🇧🇷</p>
+          <p>O maior artilheiro da história da Seleção Brasileira Masculina, conhecido pela magia pura.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- BLOCO DE DEPOIMENTOS (Neymar, Ronaldinho e Pelé) -->
+    <div id="depoimentos">
+      <h2 class="titulo-secao" id="sobre-neymar">O Mundo Fala de Neymar</h2>
+      <div class="depoimentos-container">
+        <div class="balao-citacao">
+          <p>"Assisti-lo jogar é um prazer. Ele apanha, levanta, drible e desafia os defensores. Neymar carrega a essência do futebol brasileiro."</p>
+          <span class="autor-citacao">— Ronaldinho Gaúcho</span>
+        </div>
+        <div class="balao-citacao">
+          <p>"O talento dele é indiscutível. Ele aguenta uma pressão gigantesca desde muito jovem e sempre foi um jogador decisivo."</p>
+          <span class="autor-citacao">— Cristiano Ronaldo</span>
+        </div>
+      </div>
+
+      <h2 class="titulo-secao" id="sobre-ronaldinho">O Mundo Fala de Ronaldinho</h2>
+      <div class="depoimentos-container">
+        <div class="balao-citacao">
+          <p>"Ronaldinho mudou a história do Barcelona. Quando ele chegou, o clube estava em um momento difícil, e ele trouxe de volta a alegria."</p>
+          <span class="autor-citacao">— Lionel Messi</span>
+        </div>
+        <div class="balao-citacao">
+          <p>"Não havia ninguém melhor do que ele naqueles anos de auge. Ele fazia coisas com a bola que pareciam desafiar as leis da física."</p>
+          <span class="autor-citacao">— Zinedine Zidane</span>
+        </div>
+      </div>
+
+      <h2 class="titulo-secao" id="sobre-pele">O Mundo Fala de Pelé</h2>
+      <div class="depoimentos-container">
+        <div class="balao-citacao">
+          <p>"Dizer que Pelé foi o maior de todos os tempos é pouco. Ele estava simplesmente em outra dimensão, acima de qualquer esporte."</p>
+          <span class="autor-citacao">— Johan Cruyff</span>
+        </div>
+        <div class="balao-citacao">
+          <p>"Antes do Pelé, o futebol era apenas um esporte. Pelé mudou tudo. Ele transformou o futebol em arte."</p>
+          <span class="autor-citacao">— Neymar Jr</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOVA SEÇÃO: A ORIGEM E AS REGRAS DO FUTEBOL -->
+    <h2 class="titulo-secao" id="historia-regras">A Origem e as Regras do Futebol</h2>
+    
+    <div class="bloco-historia">
+      <h3>O Início de Tudo: Onde Começou?</h3>
+      <p>Embora povos antigos na China (Cuju), Grécia e Roma jogassem jogos parecidos com chutes em bolas de couro, o futebol moderno como conhecemos nasceu oficialmente na <strong>Inglaterra</strong>.</p>
+      <p>No início do século XIX, escolas públicas britânicas jogavam variações violentas e sem padronização. Tudo mudou em <strong>26 de outubro de 1863</strong>, quando representantes de vários clubes se reuniram na taverna Freemasons em Londres e fundaram a <em>The Football Association (FA)</em>, criando o primeiro livro oficial de regras do mundo e separando de vez o futebol do rúgbi.</p>
+
+      <h3>As Primeiras Regras vs. Hoje</h3>
+      <p>No começo, o jogo era bem diferente do atual. Veja como as regras evoluíram desde o início:</p>
+      
+      <ul class="lista-regras">
+        <li><strong>Uso das mãos:</strong> <span>No início de 1863, qualquer jogador de linha podia agarrar a bola no ar (mas não correr com ela). O goleiro fixo só passou a existir anos depois, em 1871.</span></li>
+        <li><strong>O Impedimento Original:</strong> <span>A primeira regra dizia que qualquer jogador à frente da bola estava impedido. Isso fazia o jogo parecer com o rúgbi, baseado apenas em passes para trás.</span></li>
+        <li><strong>Cartões Amarelo e Vermelho:</strong> <span>As punições por cartões coloridos só surgiram na Copa do Mundo de 1970 para evitar barreiras de idioma entre juízes e atletas.</span></li>
+        <li><strong>O Pênalti:</strong> <span>Foi criado em 1891 para punir faltas violentas perto do gol, apelidado na época de "o chute da morte".</span></li>
