@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Fundo Verde-Campo com listras verticais de estádio */
+  body {
+    background: linear-gradient(90deg, #19581d 50%, #134616 50%);
+    background-size: 140px 100%;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: #0b290d;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #4ade80;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  header .logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Letras Verde Claro no Destaque */
+  .destaque-verde {
+    color: #4ade80;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  /* Efeito Hover Verde Claro nos links */
+  nav ul li a:hover {
+    color: #a3e635;
+  }
+  
+  /* Banner Principal */
+  .hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://unsplash.com') center/cover no-repeat;
+    text-align: center;
+    padding: 6rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    color: #4ade80; /* Título em verde claro */
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #e2e8f0;
+  }
+  
+  /* Seção de Conteúdo */
+  .container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+  
+  .titulo-secao {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #a3e635; /* Subtítulo em verde limão claro */
+    text-transform: uppercase;
+  }
+  
+  /* Grid de Cards das Lendas */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Estrutura do Card */
+  .card {
+    background-color: #ffffff;
+    color: #1a1a1a; /* Texto escuro dentro do card para leitura perfeita */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Detalhe do Card (Badge) */
+  .card-badge {
+    background-color: #0b290d;
+    color: #4ade80; /* Texto do selo em verde claro */
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-content h3 {
+    font-size: 1.5rem;
+    color: #134616; /* Título do jogador em verde escuro */
+    margin-bottom: 0.2rem;
+  }
+  
+  .card-content .pais {
+    font-weight: 600;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-content p {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: #051406;
+    color: #888;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 5rem;
+    border-top: 2px solid #19581d;
+  }
